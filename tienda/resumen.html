@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resumen | Café de Altura</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body data-page="resumen">
+<main>
+<h1>Resumen del pedido</h1>
+<section class="tarjeta">
+  <ul data-test="lineas"></ul>
+  <dl>
+    <dt>Subtotal</dt><dd data-test="subtotal"></dd>
+    <dt>Descuento (<span data-test="descuento-pct"></span>%)</dt><dd data-test="descuento"></dd>
+    <dt>Envío</dt><dd data-test="envio"></dd>
+    <dt>Total</dt><dd><strong data-test="total"></strong></dd>
+  </dl>
+  <div class="acciones">
+    <button type="button" class="secundario" data-test="cancelar">Cancelar</button>
+    <button type="button" data-test="confirmar">Confirmar compra</button>
+  </div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

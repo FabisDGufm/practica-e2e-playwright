@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datos de envío | Café de Altura</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body data-page="checkout">
+<main>
+<h1>Datos de envío</h1>
+<form class="tarjeta" novalidate>
+  <label for="nombre">Nombre</label>
+  <input id="nombre" data-test="nombre">
+  <label for="apellido">Apellido</label>
+  <input id="apellido" data-test="apellido">
+  <label for="cp">Código postal</label>
+  <input id="cp" inputmode="numeric" data-test="cp">
+  <label for="cupon">Cupón (opcional)</label>
+  <input id="cupon" data-test="cupon">
+  <p class="error" role="alert" data-test="error"></p>
+  <div class="acciones">
+    <button type="button" class="secundario" data-test="cancelar">Cancelar</button>
+    <button type="submit" data-test="continuar">Continuar</button>
+  </div>
+</form>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

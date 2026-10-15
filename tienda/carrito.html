@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carrito | Café de Altura</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body data-page="carrito">
+<main>
+<h1>Carrito</h1>
+<p data-test="vacio">El carrito está vacío.</p>
+<table>
+  <thead><tr><th>Producto</th><th>Precio</th><th>Cantidad</th><th>Total</th><th></th></tr></thead>
+  <tbody></tbody>
+</table>
+<p class="error" role="alert" data-test="error"></p>
+<p class="total">Subtotal: <strong data-test="subtotal"></strong></p>
+<div class="acciones">
+  <a href="catalogo.html" data-test="seguir-comprando">Seguir comprando</a>
+  <button type="button" data-test="continuar">Continuar al pago</button>
+</div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

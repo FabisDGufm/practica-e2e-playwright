@@ -1,0 +1,29 @@
+:root { --papel: #f7f6f1; --tinta: #1f241e; --tinta2: #545a4e; --linea: #dfe1d7; --acento: #2e5d4b; --error: #9a3b2e; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 16px/1.5 system-ui, sans-serif; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; background: var(--acento); color: #fff; }
+header a, header button { color: #fff; }
+header nav { display: flex; gap: 16px; align-items: center; }
+.marca { font-weight: 700; text-decoration: none; }
+main { max-width: 960px; margin: 0 auto; padding: 16px; }
+.tarjeta { background: #fff; border: 1px solid var(--linea); border-radius: 8px; padding: 16px; margin-bottom: 16px; max-width: 420px; }
+label { display: block; margin-top: 8px; }
+input, select { width: 100%; padding: 8px; border: 1px solid var(--linea); border-radius: 4px; font: inherit; }
+button { padding: 8px 14px; border: 0; border-radius: 4px; background: var(--acento); color: #fff; font: inherit; cursor: pointer; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.secundario, header button { background: transparent; border: 1px solid currentColor; color: inherit; }
+.error { color: var(--error); min-height: 1.5em; margin: 8px 0; }
+.ayuda h2 { font-size: 14px; margin: 0; color: var(--tinta2); }
+.barra { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; }
+.barra label { width: 240px; }
+.productos { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.productos article { background: #fff; border: 1px solid var(--linea); border-radius: 8px; padding: 16px; }
+.productos h2 { font-size: 18px; margin: 8px 0 0; }
+.foto { height: 120px; display: grid; place-items: center; background: #e7ece4; color: var(--acento); font-size: 48px; border-radius: 4px; }
+.precio { font-weight: 700; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--linea); }
+td input { width: 70px; }
+.acciones { display: flex; gap: 12px; align-items: center; margin-top: 12px; }
+dl { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; }
+dd { margin: 0; text-align: right; }

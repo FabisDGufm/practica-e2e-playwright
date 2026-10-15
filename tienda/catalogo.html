@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo | Café de Altura</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body data-page="catalogo">
+<main>
+<div class="barra">
+  <h1>Catálogo</h1>
+  <label>Ordenar por
+    <select id="orden" data-test="orden">
+      <option value="az">Nombre (A a Z)</option>
+      <option value="za">Nombre (Z a A)</option>
+      <option value="precio-asc">Precio (menor a mayor)</option>
+      <option value="precio-desc">Precio (mayor a menor)</option>
+    </select>
+  </label>
+</div>
+<section class="productos" data-test="productos"></section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ingresar | Café de Altura</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body data-page="login">
+<main>
+<h1>Café de Altura</h1>
+<form class="tarjeta" novalidate>
+  <label for="usuario">Usuario</label>
+  <input id="usuario" data-test="usuario" autocomplete="off">
+  <label for="clave">Contraseña</label>
+  <input id="clave" type="password" data-test="clave">
+  <p class="error" role="alert" data-test="error"></p>
+  <button type="submit" data-test="ingresar">Ingresar</button>
+</form>
+<section class="tarjeta ayuda">
+  <h2>Usuarios de prueba</h2>
+  <p>estandar, bloqueado, problema, lento</p>
+  <h2>Contraseña de todos</h2>
+  <p>calidad2026</p>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
