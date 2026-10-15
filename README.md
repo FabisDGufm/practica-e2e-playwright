@@ -39,6 +39,8 @@ La tienda está publicada en https://danihrndzld.github.io/practica-e2e-playwrig
 npx serve tienda -l 4173
 ```
 
+`serve` quita la extensión `.html` de las URLs, así que `carrito.html` se abre como http://localhost:4173/carrito y la página de ingreso como http://localhost:4173/.
+
 Todos los usuarios usan la contraseña `calidad2026`.
 
 | Usuario | Comportamiento |
@@ -67,9 +69,9 @@ Las reglas de esta sección son la especificación. Una prueba compara lo que ha
 | Sesión | Sin sesión iniciada, cualquier página lleva al ingreso. Cerrar sesión vacía el carrito. |
 | Catálogo | Se ordena por nombre (A a Z y Z a A) o por precio (de menor a mayor y de mayor a menor). Al entrar, el orden es por nombre de A a Z. |
 | Carrito | Cada producto se agrega una vez desde el catálogo, y la cantidad se cambia en el carrito. El contador del encabezado muestra el total de unidades. |
-| Cantidad | De 1 a 5 unidades por producto. Fuera de ese rango, la tienda muestra un error y no deja continuar al pago. |
+| Cantidad | Un número entero de 1 a 5 por producto. Con un número fuera de ese rango, negativo o con decimales, la tienda muestra un error y no deja continuar al pago. |
 | Datos de envío | Nombre, apellido y código postal son obligatorios. El código postal tiene exactamente 5 dígitos. |
-| Cupón | Es opcional. El único cupón válido es `ENVIOGRATIS`, en mayúsculas o en minúsculas. Cualquier otro texto da el error "El cupón no existe." |
+| Cupón | Es opcional. El único cupón válido es `ENVIOGRATIS`, en mayúsculas o en minúsculas. Los espacios al inicio y al final no cuentan. Cualquier otro texto, incluido `ENVIOGRATIS` con letras de más, da el error "El cupón no existe." |
 | Descuento | Subtotal menor de Q200, sin descuento. De Q200 a Q499, 5 %. De Q500 en adelante, 10 %. |
 | Envío | Q25 si el código postal empieza con `01` (Ciudad de Guatemala), y Q40 en cualquier otro caso. |
 | Envío gratis | El envío cuesta Q0 si el subtotal con descuento es de Q300 o más, o si se usa el cupón `ENVIOGRATIS`. El cupón vale para cualquier código postal. |
