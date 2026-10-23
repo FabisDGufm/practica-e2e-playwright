@@ -1,0 +1,27 @@
+{
+  "name": "practica-e2e-playwright",
+  "version": "1.0.0",
+  "description": "Suite end-to-end de Playwright para la tienda Café de Altura",
+  "scripts": {
+    "test": "playwright test",
+    "smoke": "playwright test --grep @smoke",
+    "reporte": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danihrndzld/practica-e2e-playwright.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/danihrndzld/practica-e2e-playwright/issues"
+  },
+  "homepage": "https://github.com/danihrndzld/practica-e2e-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.5",
+    "serve": "^14.2.6",
+    "typescript": "^7.0.2"
+  }
+}
