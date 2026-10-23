@@ -13,7 +13,7 @@ export class CatalogoPage {
 
   constructor(private readonly page: Page) {
     this.titulo = page.getByRole('heading', { name: 'Catálogo' });
-    this.orden = page.getByRole('combobox');
+    this.orden = page.getByRole('combobox', { name: 'Ordenar por' });
     this.productos = page.getByRole('article');
     this.nombres = this.productos.getByRole('heading');
     this.precios = this.productos.getByTestId('precio');

@@ -43,3 +43,13 @@ Hay un archivo de pruebas por regla, y el nombre de cada prueba dice entre corch
 Para el descuento usé Q195 y Q495 como valores justo debajo del límite porque todos los precios son múltiplos de 5, entonces Q199 y Q499 no se pueden armar. Por lo mismo, para el envío gratis usé Q315 (que con el 5 % queda en Q299.25) y Q320 (que queda en Q304).
 
 Las pruebas que quedan en rojo son las de los defectos de DEFECTOS.md. La tienda no se modificó.
+
+## Revisión con el MCP de Playwright
+
+Con la tienda corriendo en local y el usuario estandar, abrí con el MCP de Playwright las seis páginas (ingreso, catálogo, carrito, datos de envío, resumen y confirmación), y también el carrito vacío después de confirmar. En cada una tomé el snapshot de accesibilidad y lo comparé con los localizadores de la carpeta pages. Además entré con el usuario lento para ver el botón de ingreso mientras dice Ingresando..., porque LoginPage también busca ese texto.
+
+Revisé cinco cosas: que no hubiera selectores CSS o xpath donde el elemento tiene un rol o una etiqueta, que cada localizador correspondiera a algo que aparece en un snapshot, que los page objects no tuvieran asserts, que no hubiera esperas por tiempo, y que las pruebas no escribieran localizadores por su cuenta. Todos los localizadores aparecen en algún snapshot, no hay CSS ni xpath, no hay expect dentro de pages, no hay waitForTimeout, y las pruebas solo usan page para ir a una URL o revisar la URL, nunca para buscar elementos.
+
+El único cambio fue en CatalogoPage: el selector de orden buscaba cualquier combobox, y ahora lo busca por su nombre, Ordenar por, que es como aparece en el snapshot. Lo demás se quedó igual. Los data-test se mantienen solo en el precio de cada producto, el contador del carrito y los montos del resumen y del carrito, porque en el snapshot esos valores son texto suelto o celdas sin nombre propio. El número de pedido también sigue con data-test, porque en el snapshot es solo un texto en negrita sin rol.
+
+Después del cambio corrí npm test y el resultado no cambió: 66 pruebas en verde y 6 en rojo, que son los seis defectos de DEFECTOS.md.
